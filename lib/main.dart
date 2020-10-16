@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,15 +18,11 @@ class Flutter101App extends StatelessWidget {
             title: Text('Flutter 101'),
           ),
           body: Center(
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: SizedBox(
+            child: Image.asset(
+                'assets/images/trumpet.jpg',
                 width: 100,
                 height: 100,
               ),
-            ),
           ),
         ));
   }
