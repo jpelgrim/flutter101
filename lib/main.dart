@@ -8,29 +8,36 @@ void main() {
 class Flutter101App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final audio = Audio('trumpet.mp3');
-    return MaterialApp(
-        title: 'Flutter 101',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+    return Container(
+      color: Colors.blue,
+      child: Center(
+        child: SoundButton(name: 'trumpet'),
+      ),
+    );
+  }
+}
+
+class SoundButton extends StatelessWidget {
+  const SoundButton({
+    Key key,
+    @required this.name,
+  }) : super(key: key);
+
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    final Audio audio = Audio('$name.mp3');
+    return GestureDetector(
+      onTap: () => audio.start(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12.0),
+        child: Image.asset(
+          'assets/images/$name.jpg',
+          width: 100,
+          height: 100,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Flutter 101'),
-          ),
-          body: Center(
-            child: GestureDetector(
-              onTap: () => audio.start(),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
-                child: Image.asset(
-                  'assets/images/trumpet.jpg',
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }
