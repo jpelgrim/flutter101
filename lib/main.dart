@@ -18,11 +18,14 @@ class Flutter101App extends StatelessWidget {
             title: Text('Flutter 101'),
           ),
           body: Center(
-            child: Image.asset(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12.0),
+              child: Image.asset(
                 'assets/images/trumpet.jpg',
                 width: 100,
                 height: 100,
               ),
+            ),
           ),
         ));
   }
