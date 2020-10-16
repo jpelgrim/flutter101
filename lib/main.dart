@@ -16,12 +16,16 @@ class Flutter101App extends StatelessWidget {
           appBar: AppBar(
             title: Text('Flutter 101'),
           ),
-          body: Container(
-            child: SizedBox(
-              width: 100,
-              height: 100,
+          body: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.all(Radius.circular(12))),
+              child: SizedBox(
+                width: 100,
+                height: 100,
+              ),
             ),
-            color: Colors.amber,
           ),
         ));
   }
