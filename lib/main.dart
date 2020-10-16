@@ -8,12 +8,26 @@ void main() {
 class Flutter101App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Center(
-        child: SoundButton(name: 'trumpet'),
-      ),
-    );
+    return MaterialApp(
+        title: 'Flutter 101',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Flutter 101'),
+          ),
+          body: GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(8.0),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 3,
+            children: <Widget>[
+              SoundButton(name: 'trumpet'),
+            ],
+          ),
+        ));
   }
 }
 
