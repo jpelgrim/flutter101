@@ -17,7 +17,11 @@ class Flutter101App extends StatelessWidget {
             title: Text('Flutter 101'),
           ),
           body: Container(
-            color: Colors.white,
+            child: SizedBox(
+              width: 100,
+              height: 100,
+            ),
+            color: Colors.amber,
           ),
         ));
   }
