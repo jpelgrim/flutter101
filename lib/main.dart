@@ -24,7 +24,7 @@ class Flutter101App extends StatelessWidget {
             mainAxisSpacing: 10,
             crossAxisCount: 3,
             children: <Widget>[
-              SoundButton(name: 'trumpet'),
+              ...SoundButton(name: 'trumpet') * 12,
             ],
           ),
         ));
@@ -48,10 +48,16 @@ class SoundButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
         child: Image.asset(
           'assets/images/$name.jpg',
-          width: 100,
-          height: 100,
         ),
       ),
     );
+  }
+
+  List<SoundButton> operator *(int times) {
+    final list = <SoundButton>[];
+    for (int i = 0; i < times; i++) {
+      list.add(this);
+    }
+    return list;
   }
 }
